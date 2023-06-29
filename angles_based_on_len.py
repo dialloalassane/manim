@@ -46,7 +46,7 @@ class RightTriangle(VMobject):
     def get_height(self):
         return self.l2.get_length()
     def get_hypo(self):
-        return self.l3.get_height()
+        return self.l3.get_length()
 
 
 class Determine_Angle_based_on_side_lengths(Scene):
@@ -82,7 +82,7 @@ class Determine_Angle_based_on_side_lengths(Scene):
         for i in [a,b,c,d]:
             base = i.get_base()
             height = i.get_height()
-            hypo = i.get_base()
+            hypo = i.get_hypo()
             self.wait(1)
             self.play(Create(i), run_time= 2.5)
             self.wait(2)
