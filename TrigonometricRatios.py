@@ -177,3 +177,104 @@ class TrigonometricRatios(Scene):
         self.wait(1)
         self.play(Write(tan30), run_time= 2)
         self.wait(4)
+        self.clear()
+
+
+        # 0 and 90 Degrees
+        t = ValueTracker(1)
+        l1 = always_redraw(lambda : Line(start= np.array([4,-3,0]), end= np.array([4+t.get_value(),-3,0])))
+        l2 = always_redraw(lambda : Line(start= l1.get_start(), end= np.array([4,2,0])))
+        l3 = always_redraw(lambda : Line(start= l1.get_end(), end= l2.get_end()))
+        tri = VGroup(l1,l2,l3)
+
+        # Corners Labels
+        A = Tex("A").next_to(l1.get_start(), DOWN)
+        B = Tex("B").next_to(l2.get_end(), UP)
+        C = always_redraw(lambda : Tex("C").next_to(l1.reverse_direction().get_end(), DOWN))
+
+        # Angles
+        beta = always_redraw(lambda : Angle(line1= l2.reverse_direction(), line2= l3.reverse_direction()))
+        theta = always_redraw(lambda : Angle(line1= l3.reverse_direction(), line2= l1.reverse_direction()))
+
+        # AB, BC and AC
+        sina = always_redraw(lambda : MathTex(r"sinus(\alpha) = \frac{opposite}{hypotenuse} = \frac{AC}{BC} =", "\\frac{{{}}}{{{}}}={}".format(round(l1.get_length(),2), round(l3.get_length(),2), round(l1.get_length()/l3.get_length(),2) )).to_corner(LEFT).shift(UP *2))
+        cosa = always_redraw(lambda : MathTex(r"cos(\alpha) = \frac{adjacent}{hypotenuse} = \frac{AB}{BC} =", "\\frac{{{}}}{{{}}}={}".format(round(l2.get_length(),2), round(l3.get_length(),2), round(l2.get_length()/l3.get_length(),2) )).next_to(sina, DOWN))
+        tan = always_redraw(lambda : MathTex(r"tan(\alpha) = \frac{opposite}{adjacent} = \frac{AC}{AB} =", "\\frac{{{}}}{{{}}}={}".format(round(l1.get_length(),2), round(l2.get_length(),2), round(l1.get_length()/l2.get_length(),2) )).next_to(cosa, DOWN))
+
+        sinb = always_redraw(lambda : MathTex(r"sinus(\beta) = \frac{hypotenuse}{opposite} = \frac{BC}{AC} =", "\\frac{{{}}}{{{}}}={}".format(round(l2.get_length(),2), round(l3.get_length(),2), round(l2.get_length()/l3.get_length(),2) )).next_to(tan, DOWN))
+        cosb = always_redraw(lambda : MathTex(r"cos(\alpha) = \frac{hypotenuse}{adjacent} = \frac{BC}{AB} =", "\\frac{{{}}}{{{}}}={}".format(round(l1.get_length(),2), round(l3.get_length(),2), round(l1.get_length()/l3.get_length(),2) )).next_to(sinb, DOWN))
+
+        self.add(tri, beta, theta, sina, cosa, tan, A, B, C, sinb, cosb)
+        self.play(t.animate.increment_value(-0.99), run_time= 8)
+        self.wait(2)
+        self.clear()
+
+        # Unit Circle
+        MathTex.set_default(font_size= 15)
+        axes = Axes(x_range= [-1,1], y_range= [-1,1], x_length= 6, y_length= 6, tips=False)
+        x_points = list(map(MathTex, [r"-\frac{1}{2}", r"-\frac{\sqrt{2}}{2}", r"-\frac{\sqrt{3}}{2}", r"\frac{1}{2}", r"\frac{\sqrt{2}}{2}", r"\frac{\sqrt{3}}{2}"]))
+        x_points = VGroup(*x_points)
+        y_points = x_points.copy()
+        y_points = VGroup(*y_points)
+        x_axes_lines = list()
+        y_axes_lines = list()
+        n=0
+        for j in range(1,3): 
+            for i in [1/2, np.sqrt(2)/2, np.sqrt(3)/2]:
+                i = i * ((-1)**j)
+                print(i)
+                x_points[n].move_to(axes.c2p(i,-0.1,0))
+                y_points[n].move_to(axes.c2p(-0.1,i,0))
+                tmp = Line(start= axes.c2p(i,-0.025,0), end= axes.c2p(i,0.025,0))
+                x_axes_lines.append(tmp)
+                tmp = Line(start= axes.c2p(-0.025,i,0), end= axes.c2p(0.025,i,0))
+                y_axes_lines.append(tmp)    
+                n = n + 1
+        x_axes_lines = VGroup(*x_axes_lines)
+        y_axes_lines = VGroup(*y_axes_lines)
+        
+        TrigCircle = ParametricFunction(lambda t: axes.c2p(np.cos(t), np.sin(t)), t_range= [0,2*PI])
+        
+        angles = list(map(MathTex, [
+            r"0",
+            r"\frac{\pi}{6}",
+            r"\frac{\pi}{3}",
+            r"\frac{\pi}{2}",
+            r"\frac{2\pi}{3}",
+            r"\frac{5\pi}{6}",
+            r"\pi",
+            r"-\frac{5\pi}{6}",
+            r"\frac{-2\pi}{3}",
+            r"\frac{-\pi}{2}",
+            r"\frac{-\pi}{3}",
+            r"\frac{-\pi}{6}",
+        ]))
+        angles45 = list(map(MathTex, [
+            r"\frac{\pi}{4}",
+            r"\frac{3\pi}{4}",
+            r"\frac{-3\pi}{4}",
+            r"\frac{-\pi}{4}"
+        ]))
+
+        self.play(Create(VGroup(axes, TrigCircle)))
+        for i in range(0,len(angles)):
+            angles[i].move_to(axes.c2p(1.1*np.cos(PI/6 * i),1.1*np.sin(PI/6 * i)))
+            self.play(Write(angles[i]), run_time= 0.5)
+        for i in range(0, len(angles45)):
+            angles45[i].move_to(axes.c2p(1.1*np.cos((PI/2 * i) + PI/4),1.1*np.sin((PI/2 * i) + PI/4)))
+            self.play(Write(angles45[i]), run_time= 0.5)
+        angles = VGroup(*angles)
+        self.add(TrigCircle, angles)
+
+        t = ValueTracker(0)
+        opp = always_redraw(lambda : Line(start= axes.c2p(0,0,0), end= axes.c2p(np.cos(t.get_value()),0,0), color= "#ffff47"))
+        opp_y = always_redraw(lambda : Line(start= axes.c2p(0,np.sin(t.get_value()),0), end= axes.c2p(np.cos(t.get_value()),np.sin(t.get_value()),0), color= "#ffff47"))
+        adj = always_redraw(lambda : Line(start= axes.c2p(np.cos(t.get_value()),0,0), end= axes.c2p(np.cos(t.get_value()),np.sin(t.get_value()),0), color= "#ffff47"))
+        hypo = always_redraw(lambda : Line(start= axes.c2p(0,0,0), end= axes.c2p(np.cos(t.get_value()),np.sin(t.get_value()),0), color= "#ffff47"))
+
+        self.play(Create(VGroup(opp, adj, hypo, opp_y)))
+
+        for i in range(4):
+            for i in [PI/6, PI/12, PI/12, PI/6]:
+                self.play(t.animate.increment_value(i), run_time= 4, rate_func=rate_functions.linear)
+                self.wait(2)
