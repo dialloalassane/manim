@@ -1,3 +1,4 @@
 # Trigonometry
 ## Hexagon
-![Image ](/Media/Images/Hexagon.png)
+
+![Test](/Media/Images/Hexagon.png)
