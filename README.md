@@ -1,3 +1,3 @@
 # Trigonometry
 ## Hexagon
-[![Video Demo](/Media/Images/Hexagon.png)](/Media/Videos/Hexagon.mp4)
+[![Video Alt Text](/Media/Images/Hexagon.png)](/Media/Videos/Hexagon.mp4)
