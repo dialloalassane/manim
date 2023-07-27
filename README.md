@@ -11,4 +11,4 @@ And then the equilateral triangle can be splitted into Right Angled Triangle.
 
 Naming the Sides of a Tringle.
 
-[![Test](/Media/gigs/Sides.gif)](/Media/Videos/sides.mp4)
+[![Test](/Media/gifs/Sides.gif)](/Media/Videos/sides.mp4)
