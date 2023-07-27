@@ -12,3 +12,7 @@ And then the equilateral triangle can be splitted into Right Angled Triangle.
 Naming the Sides of a Tringle.
 
 [![Test](/Media/Gifs/Sides.gif)](/Media/Videos/Sides.mp4)
+
+Sum of all the Angles of a triangle always equals to 180 degrees.
+
+[![Test](/Media/Images/Sum_of_Angles_180.png)
