@@ -7,4 +7,8 @@ A shape like hexagon can be splitted into many triangles.
 
 And then the equilateral triangle can be splitted into Right Angled Triangle.
 
-[![Test1](/Media/gifs/Splitting_into_RightTriangle.gif)](/Media/Videos/hexagon.mp4)
+[![Test](/Media/gifs/Splitting_into_RightTriangle.gif)](/Media/Videos/hexagon.mp4)
+
+Naming the Sides of a Tringle.
+
+[![Test](/Media/gigs/Sides.gif)](/Media/Videos/sides.mp4)
