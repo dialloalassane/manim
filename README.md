@@ -3,5 +3,4 @@
 
 A shape like hexagon can be splitted into many triangles.
 
-[![Test](/Media/Images/hexagon.png)](/Media/Videos/hexagon.mp4)
 [![Test](/Media/gifs/Hexagon.gif)](/Media/Videos/hexagon.mp4)
