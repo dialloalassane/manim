@@ -15,4 +15,5 @@ Naming the Sides of a Tringle.
 
 Sum of all the Angles of a triangle always equals to 180 degrees.
 
-[![Test](/Media/Images/Sum_of_Angles_180.png)
+[![Test](/Media/Images/Sum_of_Angles_180.png)](/Media/Videos/Sum_of_Angles_180.mp4)
+
