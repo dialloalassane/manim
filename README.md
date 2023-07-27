@@ -1,3 +1,3 @@
 # Trigonometry
 ## Hexagon
-https://github.com/dialloalassane/manim/blob/main/Media/Videos/Hexagon.mp4
+[![Video Demo](/Media/Images/Hexagon.png)](/Media/Videos/Hexagon.mp4)
