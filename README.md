@@ -23,5 +23,10 @@ Sum of all the Angles of a triangle always equals to 180 degrees.
 
 ### The relations between the angles and the sides of a right triangle:
 
+Determining angles based on the side lengths of a triangle.
+
 [![Test](/Media/Images/Determine_Angle_based_on_side_lengths.png)](/Media/Videos/Determine_Angle_based_on_side_lengths.mp4)
 
+Determining lenghts based on angles of a triangle.
+
+[![Test](/Media/Gifs/Determine_Lengths_based_on_Angles.gif)](/Media/Videos/Determine_Lenghts_based_on_Angles.mp4)
