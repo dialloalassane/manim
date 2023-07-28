@@ -1,3 +1,8 @@
+# Code Structure
+This repository contains manim code for explaining Trigonometry. There are three Manim Objects used throughout which are list below.
+## 1. CTriangle (Custom Triangle)
+This is a triangle with base length 2.6
+
 # Trigonometry
 ## Hexagon
 
