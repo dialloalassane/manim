@@ -1,5 +1,6 @@
 # Code Structure
-This repository contains manim code for explaining Trigonometry. There are three Manim Objects defined in  [TrigonometryMobjects.py](/TrigonometryMobjects.py)  used throughout which are list below.
+This repository contains manim code for explaining Trigonometry. The [TrigonometryScene.py](/TrigonometryScene.py) contains scenes defined in different classes.
+There are three Manim Objects defined in  [TrigonometryMobjects.py](/TrigonometryMobjects.py)  used throughout which are list below.
 ## 1. CTriangle ( Custom Triangle )
 This is a triangle with base length 2.6 and height 1.
 ## 2. RightTriangle ( Right Triangle )
