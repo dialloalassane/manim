@@ -31,3 +31,6 @@ Determining lenghts based on angles of a triangle.
 
 [![Test](/Media/Gifs/Determine_Lengths_based_on_Angles.gif)](/Media/Videos/Determine_Lengths_based_on_Angles.mp4)
 
+Varying sides of a triangle to get one angle of 90 degrees.
+
+[![Test](/Media/Images/VarySides.png)](/Media/Videos/VarySides.mp4)
