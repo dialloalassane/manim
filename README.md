@@ -15,13 +15,13 @@ Naming the Sides of a Tringle.
 
 [![Test](/Media/Gifs/Sides.gif)](/Media/Videos/Sides.mp4)
 
-# Sum of Angles of a Triangle
+### Sum of Angles of a Triangle
 
 Sum of all the Angles of a triangle always equals to 180 degrees.
 
 [![Test](/Media/Images/Sum_of_Angles_180.png)](/Media/Videos/Sum_of_Angles_180.mp4)
 
-# The relations between the angles and the sides of a right triangle:
+### The relations between the angles and the sides of a right triangle:
 
 [![Test](/Media/Images/Determine_Angle_based_on_side_lengths.png)](/Media/Videos/Determine_Angle_based_on_side_lengths.mp4)
 
