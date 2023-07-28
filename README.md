@@ -29,4 +29,5 @@ Determining angles based on the side lengths of a triangle.
 
 Determining lenghts based on angles of a triangle.
 
-[![Test](/Media/Gifs/Determine_Lengths_based_on_Angles.gif)](/Media/Videos/Determine_Lenghts_based_on_Angles.mp4)
+[![Test](/Media/Gifs/Determine_Lengths_based_on_Angles.gif)](/Media/Videos/Determine_Lengths_based_on_Angles.mp4)
+
