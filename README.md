@@ -6,7 +6,7 @@ This is a triangle with base length 2.6 and height 1.
 ## 2. RightTriangle ( Right Triangle )
 This is a right triangle with base length 1.3 and height 1. This contains 1 angle of 90 degrees.
 ## 3. CustomRightTriangle (Custom Right Triangle )
-This is a custom right angle triangle. This takes base and height as parameters and generates a right triangle based on it.
+This is a custom right angle triangle. It takes base and height as parameters and generates a right triangle based on them.
 
 # Trigonometry
 ## Hexagon
