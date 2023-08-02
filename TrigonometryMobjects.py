@@ -10,15 +10,11 @@ class CTriangle(VMobject):
     """
     def __init__(self):
         super().__init__()
-        l1 = Line(start= np.array([-1.3,-1,0]), end= np.array([1.3,-1,0]))
-        l2 = Line(start= l1.get_start(), end= np.array([0,1,0]))
-        l3 = Line(start= l1.get_end(), end= l2.get_end())
+        self.l1 = Line(start= np.array([-1.3,-1,0]), end= np.array([1.3,-1,0]))
+        self.l2 = Line(start= l1.get_start(), end= np.array([0,1,0]))
+        self.l3 = Line(start= l1.get_end(), end= l2.get_end())
         triangle = VGroup(l1,l2,l3)
         self.become(triangle)
-
-        self.l1 = l1
-        self.l2 = l2
-        self.l3 = l3
 
     def set_base_color(self, c):
         self.l1.set_color(color= c)
@@ -36,15 +32,11 @@ class RightTriangle(VMobject):
     """
     def __init__(self):
         super().__init__()
-        l1 = Line(start= np.array([0,-1,0]), end= np.array([1.3,-1,0]))
-        l2 = Line(start= l1.get_start(), end= np.array([0,1,0]))
-        l3 = Line(start= l1.get_end(), end= l2.get_end())
+        self.l1 = Line(start= np.array([0,-1,0]), end= np.array([1.3,-1,0]))
+        self.l2 = Line(start= l1.get_start(), end= np.array([0,1,0]))
+        self.l3 = Line(start= l1.get_end(), end= l2.get_end())
         rtriangle = VGroup(l1, l2, l3)
         self.become(rtriangle)
-
-        self.l1 = l1
-        self.l2 = l2
-        self.l3 = l3
     
     # Getters
     def get_base(self):
@@ -59,26 +51,18 @@ class RightTriangle(VMobject):
 class CustomRightTriangle(VMobject):
     def __init__(self, base, height):
         super().__init__()
-        l1 = Line(start= np.array([0,0,0]), end= np.array([base,0,0]))
-        l2 = Line(start= np.array([0,0,0]), end= np.array([0,height,0]))
-        l3 = Line(start= l1.get_end(), end= l2.get_end())
+        self.l1 = Line(start= np.array([0,0,0]), end= np.array([base,0,0]))
+        self.l2 = Line(start= np.array([0,0,0]), end= np.array([0,height,0]))
+        self.l3 = Line(start= l1.get_end(), end= l2.get_end())
         Angle.set_default(color= "#34eb37")
-        alpha = RightAngle(line1= l1, line2= l2)
-        beta = Angle(line1= l3, line2= l1.reverse_direction())
+        self.alpha = RightAngle(line1= l1, line2= l2)
+        self.beta = Angle(line1= l3, line2= l1.reverse_direction())
         l1.reverse_direction()
-        gamma = Angle(line1= l2.reverse_direction(), line2= l3.reverse_direction())
+        self.gamma = Angle(line1= l2.reverse_direction(), line2= l3.reverse_direction())
         l2.reverse_direction()
         l3.reverse_direction()
-        t = VGroup(l1,l2,l3)
+        self.t = VGroup(l1,l2,l3)
         self.become(t)
-        
-        self.l1 = l1
-        self.l2 = l2
-        self.l3 = l3
-        self.alpha = alpha
-        self.beta = beta
-        self.gamma = gamma
-        self.t = t
 
     def add_angles(self):
         self.add(self.alpha, self.beta, self.gamma)
