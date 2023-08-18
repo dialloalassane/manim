@@ -17,7 +17,7 @@ A shape like hexagon can be splitted into many triangles.
 
 ### Right Angle Triangle
 
-And then the equilateral triangle can be splitted into Right Angled Triangle.
+The equilateral triangle can be splitted into Right Angled Triangle.
 
 [![Test](/Media/Gifs/Splitting_into_RightTriangle.gif)](/Media/Videos/Hexagon.mp4)
 
